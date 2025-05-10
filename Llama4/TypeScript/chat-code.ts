@@ -325,10 +325,10 @@ function synFloodSonata(nextOp: Operator): [Operator, Operator, Operator] {
   }
   
   function filterKeys(tuple: Tuple, keys: string[]): Tuple {
-    const newTuple = {};
+    const newTuple = new Map();
     keys.forEach(key => {
-      if (key in tuple) {
-        newTuple[key] = tuple[key];
+      if (tuple.has(key)) {
+        newTuple.set(key, tuple.get(key));
       }
     });
     return newTuple;

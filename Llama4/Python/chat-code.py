@@ -113,7 +113,7 @@ def string_of_op_result(input_: OpResult) -> str:
 def dump_tuple(out_file, tup: Tuple):
     out_file.write(str(tup) + "\n")
 
-def dump_as_csv(out_file, tup: Tuple, static_field: Optional[Tuple[str, str]] = None, header: bool = True):
+def dump_as_csv(out_file, tup: Tuple, static_field: Optional[tuple[str, str]] = None, header: bool = True):
     if header:
         if static_field:
             out_file.write(f"{static_field[0]},")
